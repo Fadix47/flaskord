@@ -25,7 +25,6 @@ pip install flaskord
 | send | payload: `Union[dict, str]`, <channel_id>: `Union[str, int]`, <user_id>: `Union[str, int]` | `None` | Send message in channel or in user DM. |
 | add_roles | guild_id: `Union[str, int]`, user_id: `Union[str, int]`, role_id: `Union[str, int]` | `None` | Add role to guild member |
 | remove_roles | guild_id: `Union[str, int]`, user_id: `Union[str, int]`, role_id: `Union[str, int]` | `None` | Remove role from guild member |
-
 | create_channel | guild_id: `Union[str, int]`, channel: `dict` | `None` | Creates channel by `channel` settings on guild|
 | delete_channel | guild_id: `Union[str, int]`, channel_id: `Union[str, int]` | `None` | Remove channel from guild |
 | edit_channel | guild_id: `Union[str, int]`, channel_id: `Union[str, int]`, payload: `dict` | `None` | Edits channel on guild by `payload` settings |
