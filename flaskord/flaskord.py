@@ -9,17 +9,14 @@ discord_api_base = "https://discordapp.com/api/v9"
 discord_api_authorize = discord_api_base + "/oauth2/authorize"
 discord_api_token = discord_api_base + "/oauth2/token"
 
-class Flaskcord:
-    def __init__(self, token: str = None):
-        if token:
-            self.headers = {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                "authorization": f"Bot {token}",
-                "intents": "GUILD_MEMBERS"
-            }
-        else:
-            raise UndefinedToken("Token is not set")
+class client:
+    def __init__(self, token):
+        self.headers = {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "authorization": f"Bot {token}",
+            "intents": "GUILD_MEMBERS" # it doesn't need it, but I'll leave it here :/
+        }
 
     def __run__(self, route, method, payload=None):
         route = discord_api_base + route
