@@ -57,7 +57,17 @@ class client:
                   guild_id: Union[str, int]) -> dict:
 
         resp = self.__run__(route=f"/guilds/{guild_id}?with_counts=true", method='GET')
+        guild_channels = self.__run__(route=f"/guilds/{guild_id}/channels", method='GET')
+
+        text_channels = [i for i in guild_channels if i["type"] in (0, 5, 15)]
+        voice_channels = [i for i in guild_channels if i["type"] == 2]
+        categories = [i for i in guild_channels if i["type"] == 4]
+
+        resp["text_channels"] = text_channels
+        resp["voice_channels"] = voice_channels
+        resp["categories"] = categories
         resp["member_count"] = resp["approximate_member_count"]
+
         return resp
 
     # advanced methods
