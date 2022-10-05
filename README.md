@@ -36,7 +36,7 @@ to make it possible to use all functions of this module
 |:--------------:|:-----------------------------:|:------:|:---------------:|
 |   get_user    |  user_id: `Union[str, int]` |  `dict`  |  Return basic information about user (not include guild)   |
 |   fetch_member  | guild_id: `Union[str, int]`, user_id: `Union[str, int]` | `dict` | Return full information about user (include guild) |
-| get_guild | guild_id: `Union[str, int]` | `dict` | Return full information about guild |
+| get_guild | guild_id: `Union[str, int]` | `dict` | Return full information about guild (special support for `member_count`, `text_channels`, `voice_channels`, `categories`) |
 | send | payload: `Union[dict, str]`, <channel_id>: `Union[str, int]`, <user_id>: `Union[str, int]` | `None` | Send message in channel or in user DM. |
 | add_roles | guild_id: `Union[str, int]`, user_id: `Union[str, int]`, role_id: `Union[str, int]` | `None` | Add role to guild member |
 | remove_roles | guild_id: `Union[str, int]`, user_id: `Union[str, int]`, role_id: `Union[str, int]` | `None` | Remove role from guild member |
